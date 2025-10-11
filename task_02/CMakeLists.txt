@@ -8,13 +8,10 @@ project(${PROJECT_NAME} C CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB_RECURSE source_list "src/*.cpp" "src/*.hpp")
-file(GLOB_RECURSE main_source_list "src/main.cpp")
-file(GLOB_RECURSE test_source_list "src/*.cpp")
-file(GLOB_RECURSE test_list "src/*test.cpp")
+file(GLOB_RECURSE source_list "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp")
+file(GLOB test_source_list "${CMAKE_CURRENT_SOURCE_DIR}/src/*test.cpp")
 
-list(REMOVE_ITEM test_source_list ${main_source_list})
-list(REMOVE_ITEM source_list ${test_list})
+list(REMOVE_ITEM source_list ${test_source_list})
 
 include_directories(${PROJECT_NAME} PUBLIC src)
 
