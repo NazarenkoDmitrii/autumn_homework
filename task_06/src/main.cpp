@@ -1,3 +1,8 @@
+#include "solution.hpp"
+
 #include <iostream>
 
-int main() { return 0; }
+int main() {
+  SolveTask06(std::cin, std::cout);
+  return 0;
+}
